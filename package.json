@@ -1,0 +1,25 @@
+{
+  "name": "react-backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "@nivo/bar": "^0.49.1",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "imgur-uploader": "^4.2.1",
+    "input-moment": "^0.4.0",
+    "jade": "~1.11.0",
+    "material-ui": "^0.20.0",
+    "material-ui-icons": "^1.0.0-beta.36",
+    "morgan": "~1.9.0",
+    "mysql": "^2.15.0",
+    "nivo": "^0.31.0",
+    "serve-favicon": "~2.4.5"
+  }
+}
