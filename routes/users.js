@@ -4,7 +4,8 @@ var Send = require('../models/Send');
 var Retrieve = require('../models/Retrieve');
 const fs = require('fs');
 const imgurUploader = require('imgur-uploader');
-/* GET users listing. */
+/* GET all Claims. */
+/* calls getAllClaims (found in models -> Retrieve.js)*/
 router.get('/', function(req, res, next) {
   Retrieve.getAllClaims(function (err, rows) {
     if (err) {
@@ -15,6 +16,8 @@ router.get('/', function(req, res, next) {
     }
   });
 });
+/* GET all Chat. */
+/* calls getAllChat (found in models -> Retrieve.js)*/
 router.get('/chat', function(req, res, next) {
   Retrieve.getAllChat(function (err, rows) {
     if (err) {
@@ -25,6 +28,8 @@ router.get('/chat', function(req, res, next) {
     }
   });
 });
+/* GET Image, currently unused. */
+/* calls getImage (found in models -> Retrieve.js)*/
 router.get('/image', function(req, res, next) {
   Retrieve.getImage(function (err, rows) {
     if (err) {
@@ -35,6 +40,8 @@ router.get('/image', function(req, res, next) {
     }
   });
 });
+/* Post new Claim, currently unused. */
+/* calls addClaim (found in models -> Send.js)*/
 router.post('/claim/', function(req, res, next) {
   Send.addClaim(req.body, function(err, rows){
     if (err) {
@@ -45,6 +52,8 @@ router.post('/claim/', function(req, res, next) {
     }
   });
 });
+/* Delete Claim, currently unused. */
+/* calls deleteClaim (found in models -> Send.js)*/
 router.delete('/deleteClaim/', function(req, res, next) {
   Send.deleteClaim(req.query, function(err, rows){
     if (err) {
@@ -55,11 +64,8 @@ router.delete('/deleteClaim/', function(req, res, next) {
     }
   });
 });
-router.post('/image/', function(req, res, next) {
-  imgurUploader(fs.readFileSync(req.body), {title: 'Hello!'}).then(data => {
-    console.log(data);
-  });
-});
+/* Post chatlog, currently unused. */
+/* calls addChat (found in models -> Send.js)*/
 router.post('/submitchat', function(req, res, next) {
   console.log(req.body);
   Send.addChat(req.body, function(err, rows){

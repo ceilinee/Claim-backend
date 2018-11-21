@@ -1,5 +1,5 @@
 var mysql=require('mysql');
-
+//Identifies SQL connection 
 var connection=mysql.createPool({
 
    host:'us-cdbr-iron-east-01.cleardb.net',
